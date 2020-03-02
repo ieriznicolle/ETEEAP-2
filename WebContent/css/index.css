@@ -1,0 +1,300 @@
+/** MAIN, FORGOT PW, SETTINGS, ACC SETTINGS, STUDENTS **/
+
+body {
+	background: #ccc url("bg.png");
+	font-family: 'Verdana';
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
+} 
+
+.topnav {
+	overflow: hidden;
+	background: rgba(255,255,255,0) url("bgnav.png");
+	background-size: 1367px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding-top: 0.87rem;
+	padding-bottom: 0.87rem;
+	font-weight: 500;
+	font-family: 'Verdana';
+}
+
+.topnav button[type=submit] {
+	float: right;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+	font-size: 15px;
+	background-color: inherit;
+	border: none;
+}
+
+.topnav button:hover[type=submit] {
+	background-color: rgba(255,255,255,0.5);
+	color: black;
+}
+
+.topnav button[type=submit].active {
+	background-color: rgba(189, 187, 190, 0.3);
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: underline;
+}
+
+/** FORGOT PASSWORD **/
+#page-container {
+	text-align: center;
+	position: relative;
+	min-height: 100%;
+}
+
+.forgotpw {
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.7);
+	width: 420px;
+	padding: 15px;
+	border-radius: 50px;
+	box-sizing: border-box;
+	box-shadow: 5px 5px 10px #959595;
+	justify-content: center;
+	text-align: center;
+	display: inline-block;
+	font-size: 13px;
+	color: rgba(30, 30, 30, 0.9);
+	margin: 50px;
+} 
+
+.forgotpw h1 {
+	font-size: 25px;
+} 
+
+.forgotpw h2 {
+	font-size: 13px;
+} 
+
+.forgotpw input[type=text], .forgotpw input[type=email],
+.forgotpw input[type=password]   {
+	width: 60%;
+	box-sizing: border-box;
+	text-align: center;
+	/*border: 2px solid #ccc;*/
+	border: 2px solid #586A8F;
+	border: 2px solid rgb(134, 45, 63);
+	border-radius: 10px;
+	font-size: 15px;
+	background-color: white;
+	background-position: 10px 10px; 
+	background-repeat: no-repeat;
+	padding: 3px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+.forgotpw input[type=text]:focus, .forgotpw input[type=email]:focus,
+.forgotpw input[type=password]:focus  {
+	width: 70%;
+}
+
+
+.forgotpw input[type=submit], .forgotpw input[type=reset] {
+	border-radius: 10px;
+	border: none;
+	color: #FFFFFF;
+	background-color: #586A8F;
+	background-color: rgb(134, 45, 63);
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+}
+
+.forgotpw input:hover[type=submit], .forgotpw input:hover[type=reset]  {
+	background-color: rgba(255, 255, 255, 0.8);
+  	border: 2px solid #ccc;
+	border-radius: 10px;
+	border: none;
+	color: rgba(30, 30, 30, 0.9);
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+}
+
+/** APPLY **/
+#cover {
+	width: 98.5%;
+	padding-top: 30px;
+	box-sizing: border-box;
+	justify-content: center;
+	background: rgba(255,255,255,0);
+	text-align: center;
+	font-size: 13px;
+}
+
+#cover input[type=text] {
+	width: 500px;
+	box-sizing: border-box;
+	text-align: center;
+	display: in-line block;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	font-size: 18px;
+	background-color: white;
+	padding: 3px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	top: 80px;
+	height: 50px;
+	
+}
+
+#cover input[type=text]:focus {
+	width: 800px;
+}
+
+.table th{	
+	border-radius: 5px;
+	background-color:#ca0000; 
+	text-align:center;
+	color: white;
+	border:1px solid;
+}
+
+.table td { 
+	color: white;
+	padding: 10px; 
+	text-align: center; 
+	vertical-align: center;
+	border-radius: 10px;
+	border:1px solid;
+	}
+	
+.table table{
+	padding: 2px; 
+	text-align: center;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	margin-top: 50px;
+	background-color:#950000; 
+	width: 70%; 
+	align-table	: center;
+	}
+	
+.table input[type=number], .table input[type=date],
+.table input[type=year], .table input[type=email], .table input[type=text] 
+{	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	font-size: 15px;
+	background-color: white;
+	background-position: 10px 10px; 
+	background-repeat: no-repeat;
+	padding: 3px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+.table input:hover[type=submit] {
+	background-color: rgba(255, 255, 255, 0.8);
+  	border: 2px solid #ccc;
+	border-radius: 10px;
+	border: none;
+	color: rgba(30, 30, 30, 0.9);
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+}
+
+/*! FOOTER */
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #2C3E50;
+	color: white;
+	text-align: center;
+}
+
+#page-container {
+	text-align: center;
+	position: relative;
+	min-height: 100%;
+}
+
+#content-wrap {
+	padding: 2rem;   /* Footer height */
+	display: inline-block;
+	margin: 25px;
+	text-align: justify;
+	background-color: rgba(244, 244, 244, 0.9);
+	border-radius: 50px;
+	box-sizing: border-box;
+	box-shadow: 5px 5px 10px #5c5c56;
+}
+
+/** !important **/
+
+#content-wrap .pic {
+	float: left;
+	max-height: 30%;
+	max-width: 30%;
+}
+
+#content-wrap h3, #contentwrap h3, #contentwrap h4 {
+	text-align: center;
+	margin: 10px;
+}
+
+#contentwrap {
+	padding: 2rem;   /* Footer height */
+	display: inline-block;
+	margin: 25px;
+	text-align: justify;
+	background-color: rgba(244, 244, 244, 0.9);
+	border-radius: 50px;
+	box-sizing: border-box;
+	box-shadow: 5px 5px 10px #5c5c56;
+	max-width: 800px;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.slidebutton {
+	background-color: #c0c0c0;
+	display: inline-block;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-align: center;
+	border-radius: 50%; }
+	
+.left {
+	float:left !important; }
+
+.right {
+	float: right !important; }
+
+.sbactive, .sba:hover {
+	background-color: rgb(134, 45, 63) !important; }
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;            /* Footer height */
+}

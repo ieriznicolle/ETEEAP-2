@@ -18,6 +18,7 @@
 	driver="com.mysql.jdbc.Driver"
 	url = "jdbc:mysql://127.0.0.1:3306/eteeap?user=IerizNicolle&password=Onetwothree45!&useSSL=false"
 />
+
 <!-- ASSESS -->
 <sql:query var="assess" dataSource="${myDS}"> 
 	select * from assess where appnum = '<%=request.getAttribute("appnum")%>';
@@ -46,7 +47,6 @@
 	ON eteeap.grades.g_num=eteeap.courses.g_num
 	AND eteeap.grades.g_pcode=eteeap.courses.course
 	WHERE eteeap.grades.g_appnum= <%=request.getAttribute("appnum")%>;
-
 </sql:query>
 
 <div id="page-container">
@@ -91,7 +91,7 @@
 	</c:forEach>
 	
 	<br>
-	<div class="coursecurr">
+	<div class="coursecurr" id="content">
 		<h1>Equivalency and Accreditation Form</h1>
 		<br>
 		
@@ -188,7 +188,7 @@
 					<td><input type="text" class="grade" name="grade" size="4" maxlength="4" value="${grades.g_grade}"/></td>
 					<td><input type="text" class="units" pattern="[0-9]+" name="units" size="2" maxlength="2" value="${grades.g_units}"/></td>
 					<td><input type="radio" class="credited" name="remarks" value="credited"/></td>
-					<td><input type="radio" class="tbtaken" name="remarks" value="tbtaken"/></td>
+					<td><input type="radio" class="tbtaken" name="remarks" value="to be taken"/></td>
 				</tr>
 				<input type="hidden" class="remark" name="remark" value="${grades.g_remarks}"/>
 				</c:forEach>
@@ -232,17 +232,24 @@
 			</table>
 			
 			<br><br>
-			<input type="submit" value="Update"/>
-			<input type="reset" value="Revert"/>
 			<input type="hidden" id="length" name="length" value="1"/>
 			<input type="hidden" name="appnum" value="<%=request.getAttribute("appnum")%>"/>			
 			<input type="hidden" name="pcode" value="<%=request.getAttribute("course")%>"/>
+			<input type="submit" value="Update"/>
+			<input type="reset" value="Revert"/>
+		</form>
+		<br>
+		<form action="NewFile.jsp" target="_blank" method="POST">
+			<input type="hidden" id="length" name="length" value="1"/>
+			<input type="hidden" name="appnum" value="<%=request.getAttribute("appnum")%>"/>			
+			<input type="hidden" name="pcode" value="<%=request.getAttribute("course")%>"/>
+			<input type="submit" value="See PDF File"/>
 		</form>
 		</div>
 	</div>
 
 	<br>
-	
+	<div id="elementH"></div>
 	<footer id="footer"></footer>
 </div>
 
@@ -279,7 +286,7 @@
 			cr = cr + 1;
 		}
 			
-		else if (rem[i].value == 'tbtaken') {
+		else if (rem[i].value == 'to be taken') {
 			document.getElementsByName("remarks"+i)[1].setAttribute("checked", "");
 			tb = tb + 1;
 		}
@@ -306,7 +313,6 @@
 		assessor[o].setAttribute("name", "assessor"+o);
 		assessed[o].setAttribute("name", "assessed"+o);		
 	}
-	
 </script>
 </body>
 

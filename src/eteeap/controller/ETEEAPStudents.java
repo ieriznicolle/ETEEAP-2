@@ -226,6 +226,29 @@ public class ETEEAPStudents extends HttpServlet
 			}
 		}
 		
+		else if ("viewlist".equals(student))
+		{
+			if (name == null || name == "")
+			{
+				res.sendRedirect("f_login.jsp");
+			}
+			
+			else
+			{
+				if (r.equals("Admin"))
+				{
+					System.out.println("\nAdmin: Student View List.");
+				}
+				
+				else if (r.equals("User"))
+				{
+					System.out.println("\nUser: Student View List.");
+				}
+				
+				req.getRequestDispatcher("/si_students_vl.jsp").forward(req, res);
+			}
+		}
+		
 		else if ("curriculum".equals(student))
 		{
 			if (name == null || name == "")
@@ -405,13 +428,13 @@ public class ETEEAPStudents extends HttpServlet
 				if (V.equals("DONE"))
 				{
 					System.out.println("\nStudent Added Successfully.");
-					req.setAttribute("errMessage", "Student Added Successfully.");
+					req.setAttribute("errMessage", "Application submitted successfully.");
 				}
 				
 				else if (V.equals("KEME"))
 				{
 					System.out.println("\nAdding student not successful.");
-					req.setAttribute("errMessage", "Adding student not successful.");
+					req.setAttribute("errMessage", "Application not submitted successfully.");
 				}
 
 				req.getRequestDispatcher("/si_students.jsp").forward(req, res);
@@ -566,6 +589,29 @@ public class ETEEAPStudents extends HttpServlet
 			}
 		}
 		
+		else if ("viewlist".equals(student))
+		{
+			if (name == null || name == "")
+			{
+				res.sendRedirect("f_login.jsp");
+			}
+			
+			else
+			{
+				if (r.equals("Admin"))
+				{
+					System.out.println("\nAdmin: Student View List.");
+				}
+				
+				else if (r.equals("User"))
+				{
+					System.out.println("\nUser: Student View List.");
+				}
+				
+				req.getRequestDispatcher("/si_students_vl.jsp").forward(req, res);
+			}
+		}
+		
 		else if ("curriculum".equals(student))
 		{
 			if (name == null || name == "")
@@ -631,6 +677,7 @@ public class ETEEAPStudents extends HttpServlet
 							if (assessed.length() > a)
 							{
 								assessed = "'" + assessed + "'";
+								System.out.println(assessed);
 							}
 							
 							else if (assessed.length() < a)

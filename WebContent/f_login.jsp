@@ -21,6 +21,9 @@
 			<form name="form" action="eteeap?epage=apply" method="post">
 				<button type="submit" value="APPLY">APPLY</button>
 			</form>
+			<form name="form" action="eteeap?epage=offerings" method="post">
+				<button type="submit" value="OFFERINGS">OFFERINGS</button>
+			</form>
 			<form name="form" action="eteeap?epage=home" method="post">
 				<button type="submit" value="HOME">HOME</button>
 			</form>

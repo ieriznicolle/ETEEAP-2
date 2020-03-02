@@ -15,7 +15,7 @@ import eteeap.connection.DBConnection;
 
 public class SettingsDao 
 {
-	public static String editProfile (String uname, String fname, String mname, String sname, String bday, String contact, String address, String email)
+	public static String editProfile (String pname, String uname, String fname, String mname, String sname, String bday, String contact, String address, String email)
 		//	throws IOException
 	{
 		Connection con = null;
@@ -32,15 +32,16 @@ public class SettingsDao
 			
 			if (mname == null || mname == "")
 			{
-				name = fname + " " + sname;
+				name = pname + " " + fname + " " + sname;
 			}
 			
 			else
 			{
 				mname = mname.toUpperCase();
-				name = fname + " " + mname + " " + sname;
+				name =  pname + " " + fname + " " + mname + " " + sname;
 			}
 			
+			statement.executeUpdate("UPDATE users set pname ='"+ pname + "' where uname='" + uname + "'");
 			statement.executeUpdate("UPDATE users set fname ='"+ fname + "' where uname='" + uname + "'");
 			statement.executeUpdate("UPDATE users set mname ='"+ mname + "' where uname='" + uname + "'");
 			statement.executeUpdate("UPDATE users set sname ='"+ sname + "' where uname='" + uname + "'");

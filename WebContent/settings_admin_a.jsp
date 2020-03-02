@@ -187,7 +187,7 @@
 		<br>
 
 		<div class="list">
-			<table id="table">
+			<table id="table" class="abc">
 				<thead>
 				<tr>
 					<th>Employee Number</th>

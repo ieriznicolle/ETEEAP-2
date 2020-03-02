@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
  	<link href="css/index.css" rel="stylesheet">  
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
 </head>
 
 <body>
@@ -19,6 +20,9 @@
 		</form>
 		<form name="form" action="eteeap?epage=apply" method="post">
 			<button type="submit" value="APPLY">APPLY</button>
+		</form>
+		<form name="form" action="eteeap?epage=offerings" method="post">
+			<button type="submit" value="OFFERINGS">OFFERINGS</button>
 		</form>
 		<form name="form" action="eteeap?epage=home" method="post">
 			<button class="active" type="submit" value="HOME">HOME</button>
@@ -38,10 +42,13 @@
 		<br><br>
 		A panel of assessors is convened to determine the candidate's knowledge, skills and attitudes relevant to a particular discipline 
 		and consequently equivalent credits and appropriate certificates and degrees are awarded by administering higher education institutions. 
+	
 	</div>
+	
 	
 	<footer id="footer"></footer>
 </div>
+
 </body>
 
 </html> 

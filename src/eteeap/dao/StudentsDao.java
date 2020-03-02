@@ -18,7 +18,7 @@ public class StudentsDao
 		Connection con = null;
 		Statement statement = null;
 		
-		String name;
+		String name = "";
 		fname = fname.toUpperCase();
 		sname = sname.toUpperCase();
 		
@@ -37,6 +37,9 @@ public class StudentsDao
 		LocalDateTime now = LocalDateTime.now();
 		String time = dtf.format(now);
 	
+		System.out.println(name);
+		System.out.println(time);
+		
 		try
 		{
 			con = DBConnection.createConnection();
@@ -52,7 +55,13 @@ public class StudentsDao
 			System.out.println("\nAdding to Database");
 			System.out.println(name + "\n" + course);
 			
-			return "DONE";
+			//email the random pw
+			String sendEmail = SendEmailDao.newStudent (email, name, time);
+			
+			if(sendEmail.equals("EMAIL SENT"))
+			{
+				return "DONE";
+			}
 		}
 		
 		catch(SQLException e)

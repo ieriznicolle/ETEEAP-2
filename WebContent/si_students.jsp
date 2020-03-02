@@ -42,7 +42,13 @@
 			<button type="submit" value="HOME">HOME</button>
 		</form>
 	</div>
-	<br><br><br>
+	<br><br><br><br>
+	
+	<div id="viewlist">
+		<form name="form" action="students?act=viewlist" method="post">
+			<button type="submit" value="viewlist">VIEW LIST</button>
+		</form>
+	</div>
 
 	<div id="students">
 		<div id="cover">
@@ -51,7 +57,6 @@
 		<span style="color:#8c2f15; font-weight:bold; font-size: 12px;">
 			<%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%><br>
 		</span>	
-		
 	</div>	
 	
 	<div id = "adset">
@@ -69,7 +74,7 @@
 
 						<form name="form" action="students?act=addstudent" method="post">	
 							<h1>ADD STUDENT</h1>
-							<div class="aed" align="center">
+							<div class="aedd" align="center">
 								<table>
 									<tr>
 										<td>Name:</td><td><input class="name" pattern="[a-zA-Z ]+" type="text" name="fname" placeholder ="JUAN" required>
@@ -114,10 +119,10 @@
 										<td>Highest Degree Earned: </td><td><select name="degree" required>
 																<option value="" disabled selected>Degree</option>
 																<option value="Undergraduate">Undergraduate</option>
-																<option value="Associate's Degree">Associate's Degree</option>
-																<option value="Bachelor's Degree">Bachelor's Degree</option>
-																<option value="Master's Degree">Master's Degree</option>
-																<option value="Doctorate's Degree">Doctorate's Degree</option>
+																<option value="Associate">Associate</option>
+																<option value="Bachelor">Bachelor</option>
+																<option value="Master">Master</option>
+																<option value="Doctorate">Doctorate</option>
 																</select></td>
 									</tr>
 									<tr>
@@ -127,7 +132,7 @@
 										<td>Year: </td><td><input type="text" pattern="[0-9]{4}" name="year" maxlength="4" title="Year" placeholder="20XX" required></td>
 									</tr>
 								</table>
-								
+								<br>
 								<input type="submit" value="Add"/>
 								<input type="reset" value="Clear Entries"/>	
 							</div>
@@ -192,22 +197,15 @@
 
 		<br>
 		<div class="list">
-			<table id="table">
+			<table id="table" class="abc">
 				<tr>
-					<th>Application #</th>
-					<th>Name</th>
-					<th>Program Applied</th>
-					<th>Date Applied</th>
-					<th>Phone Number</th>
-					<th>Mobile Number</th>
-					<th>Email</th>
-					<th>Highest Degree Attained</th>
-					<th>Last School</th>
-					<th>Year</th>
+					<th width="110px">Application #</th>
+					<th width="300px">Name</th>
+					<th width="700px">Program Applied</th>
 				</tr>
 
 				<c:forEach var="user" items="${applicants.rows}">
-				<tr>
+				<tr class="row">
 					<td><c:out value="${user.a_appnum}"/></td>
 					<td>
 						<form name="form" action="studentdetails?page=front&appnum=${user.a_appnum}&course=${user.a_pcode}" method="post">
@@ -216,13 +214,6 @@
 						</form>
 					</td>
 					<td><c:out value="${user.a_papplied}"/></td>
-					<td><c:out value="${user.a_date}"/></td>
-					<td><c:out value="${user.a_pnumber}"/></td>
-					<td><c:out value="${user.a_mnumber}"/></td>
-					<td><c:out value="${user.a_email}"/></td>
-					<td><c:out value="${user.a_hdegree}"/></td>
-					<td><c:out value="${user.a_lastschool}"/></td>
-					<td><c:out value="${user.a_year}"/></td>
 				</tr>
 				</c:forEach>
 			</table>
@@ -244,6 +235,7 @@
 	var abtn = document.getElementById("ADD");
 	var ebtn = document.getElementById("EDIT");
 	var dbtn = document.getElementById("DELETE");
+	
 	// Get the <span> element that closes the modal
 	var aspan = document.getElementsByClassName("close")[0];
 	var espan = document.getElementsByClassName("close")[1];
@@ -295,7 +287,12 @@
 				}
 			}
 			
-			if (found) {
+			if (filter == null || filter == '') {
+				table.style.display = "none";
+			}
+			
+			else if (found) {
+				table.style.display = "";
 				tr[i].style.display = "";
 				found = false;
 			}
@@ -333,6 +330,13 @@
 		catch(e) {
 			alert("unable to connect to server"); }
 	}
+
+	//wag idisplay yung buttons sa modal
+	abtn.style.display = "none";
+	ebtn.style.display = "none";
+	dbtn.style.display = "none";
+	document.getElementById("table").style.display = "none";
+	
 </script>
 
 </body>

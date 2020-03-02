@@ -86,6 +86,7 @@ public class ETEEAPSettings extends HttpServlet
 			
 			else
 			{
+				String pname = req.getParameter("pname");
 				String fname = req.getParameter("fname");
 				String mname = req.getParameter("mname");
 				String sname = req.getParameter("sname");
@@ -97,7 +98,7 @@ public class ETEEAPSettings extends HttpServlet
 				System.out.println("\nProfile Details");
 				System.out.println(fname + "\n" + mname + "\n" + sname + "\n" + bday + "\n" + contact + "\n" + address + "\n" + email);
 				
-				String V = SettingsDao.editProfile(uname, fname, mname, sname, bday, contact, address, email);
+				String V = SettingsDao.editProfile(pname, uname, fname, mname, sname, bday, contact, address, email);
 				
 				if (V.equals("Edit Profile Successful"))
 				{
@@ -265,13 +266,16 @@ public class ETEEAPSettings extends HttpServlet
 
 				if (V.equals("DONE"))
 				{
-					System.out.println("\nEdited Employee Details Successfully.");
+					System.out.println("\nEmployee details edited successfully.");
+					req.setAttribute("errMessage", "Employee details edited successfully.");
 					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 				
 				else if (V.equals("KEME"))
 				{
-					req.getRequestDispatcher("/si_profile.jsp").forward(req, res);
+					System.out.println("\nEmployee details not edited successfully.");
+					req.setAttribute("errMessage", "Employee details not edited successfully.");
+					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 			}
 		}
@@ -307,13 +311,16 @@ public class ETEEAPSettings extends HttpServlet
 
 				if (V.equals("DONE"))
 				{
-					System.out.println("\nEmployee Deleted Successfully.");
+					System.out.println("\nEmployee details deleted successfully.");
+					req.setAttribute("errMessage", "Employee details deleted successfully.");
 					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 				
 				else if (V.equals("KEME"))
 				{
-					req.getRequestDispatcher("/si_profile.jsp").forward(req, res);
+					System.out.println("\nEmployee details not deleted successfully.");
+					req.setAttribute("errMessage", "Employee details not deleted successfully.");
+					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 			}
 		}
@@ -389,6 +396,7 @@ public class ETEEAPSettings extends HttpServlet
 			
 			else
 			{
+				String pname = req.getParameter("pname");
 				String fname = req.getParameter("fname");
 				String mname = req.getParameter("mname");
 				String sname = req.getParameter("sname");
@@ -400,7 +408,7 @@ public class ETEEAPSettings extends HttpServlet
 				System.out.println("\nProfile Details");
 				System.out.println(fname + "\n" + mname + "\n" + sname + "\n" + bday + "\n" + contact + "\n" + address + "\n" + email);
 				
-				String V = SettingsDao.editProfile(uname, fname, mname, sname, bday, contact, address, email);
+				String V = SettingsDao.editProfile(pname, uname, fname, mname, sname, bday, contact, address, email);
 				
 				if (V.equals("Edit Profile Successful"))
 				{
@@ -568,13 +576,16 @@ public class ETEEAPSettings extends HttpServlet
 
 				if (V.equals("DONE"))
 				{
-					System.out.println("\nEdited Employee Details Successfully.");
+					System.out.println("\nEmployee details edited successfully.");
+					req.setAttribute("errMessage", "Employee details edited successfully.");
 					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 				
 				else if (V.equals("KEME"))
 				{
-					req.getRequestDispatcher("/si_profile.jsp").forward(req, res);
+					System.out.println("\nEmployee details not edited successfully.");
+					req.setAttribute("errMessage", "Employee details not edited successfully.");
+					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 			}
 		}
@@ -610,13 +621,16 @@ public class ETEEAPSettings extends HttpServlet
 
 				if (V.equals("DONE"))
 				{
-					System.out.println("\nEmployee Deleted Successfully.");
+					System.out.println("\nEmployee details deleted successfully.");
+					req.setAttribute("errMessage", "Employee details deleted successfully.");
 					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 				
 				else if (V.equals("KEME"))
 				{
-					req.getRequestDispatcher("/si_profile.jsp").forward(req, res);
+					System.out.println("\nEmployee details not deleted successfully.");
+					req.setAttribute("errMessage", "Employee details not deleted successfully.");
+					req.getRequestDispatcher("/settings_admin_a.jsp").forward(req, res);
 				}
 			}
 		}

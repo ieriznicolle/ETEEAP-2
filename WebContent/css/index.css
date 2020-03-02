@@ -235,7 +235,7 @@ body {
 	min-height: 100%;
 }
 
-#content-wrap {
+#content-wrap, #content {
 	padding: 2rem;   /* Footer height */
 	display: inline-block;
 	margin: 25px;
@@ -254,7 +254,8 @@ body {
 	max-width: 30%;
 }
 
-#content-wrap h3, #contentwrap h3, #contentwrap h4 {
+#content-wrap h3, #contentwrap h3, 
+#contentwrap h4, #content h1 {
 	text-align: center;
 	margin: 10px;
 }
@@ -297,4 +298,92 @@ body {
   bottom: 0;
   width: 100%;
   height: 2rem;            /* Footer height */
+}
+
+
+
+
+
+#content {
+	text-align: center;
+}
+
+#content input[type=submit], #content input[type=reset] {
+	width: 25%;
+  	border: 1px solid rgba(255, 255, 255, 0);
+	background-color: rgba(174, 188, 221, 0.9);
+	background-color: rgba(88, 106, 143, 0.9);
+	border-radius: 10px;
+	color: #FFFFFF;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+}
+
+#content input:hover[type=submit], #content input:hover[type=reset] {
+	background-color: rgba(255, 255, 255, 0.5);
+  	border: 2px solid #ccc;
+	border-radius: 10px;
+	border: none;
+	color: rgba(30, 30, 30, 0.9);
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.aed table
+{
+	text-align: left;
+	font-family: 'Verdana';
+	font-size: 15px;
+}
+
+.aed input[type=text], .aed input[type=email],
+.aed input[type=date], .aed input[type=tel], select, option {
+	width: 90%;
+	box-sizing: border-box;
+	text-align: center;
+	border: 2px solid #AEBCDD;
+	
+	border: 2px solid #586A8F;
+	border-radius: 10px;
+	font-size: 15px;
+	padding: 1px;
+	height: 30px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	
+	text-align-last: center;
+}
+
+.aed input[type=text]:focus, .aed input[type=email]:focus,
+.aed input[type=date]:focus, .aed input[type=tel]:focus, select:focus, option:focus {
+	width: 100%;
+}
+
+.aed input.name, .aed select.name {
+	width: 29.5%;
+	box-sizing: border-box;
+	text-align: center;
+	border: 2px solid #586A8F;
+	border-radius: 10px;
+	font-size: 15px;
+	padding: 1px;
+	height: 30px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+.aed input.name:focus, .aed select.name:focus {
+	width: 35%;
+}
+
+.aed input:invalid[type=email], .aed input:invalid[type=tel],
+.aed input:invalid[type=text]
+{
+	box-sizing: border-box;
+	text-align: center;
+	border: 2px solid #B14444;
 }

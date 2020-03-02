@@ -168,7 +168,7 @@
 					<td><input type="text" class="grade" name="grade" size="4" maxlength="4"/></td>
 					<td><input type="text" class="units" pattern="[0-9]+" name="units" size="2" maxlength="2"/></td>
 					<td><input type="radio" class="credited" name="remarks" value="credited"/></td>
-					<td><input type="radio" class="tbtaken" name="remarks" value="tbtaken"/></td>
+					<td><input type="radio" class="tbtaken" name="remarks" value="to be taken"/></td>
 				
 				</tr>
 				</c:forEach>
@@ -191,7 +191,7 @@
 				</tr>
 			</table>
 			<br><br>
-			<table class="assess">
+			<table class="assess" style="display: inline-block;">
 				<tr>
 					<td>Assessed by:</td>
 					<td><select class="assessor" name="assessor0">
@@ -242,6 +242,14 @@
 			<input type="hidden" name="appnum" value="<%=request.getAttribute("appnum")%>"/>			
 			<input type="hidden" name="pcode" value="<%=request.getAttribute("course")%>"/>
 		</form>
+		<br>
+		<form action="NewFile.jsp" target="_blank" method="POST">
+			<input type="hidden" id="length" name="length" value="1"/>
+			<input type="hidden" name="appnum" value="<%=request.getAttribute("appnum")%>"/>			
+			<input type="hidden" name="pcode" value="<%=request.getAttribute("course")%>"/>
+			<input type="submit" value="See PDF File"/>
+		</form>
+		
 		</div>
 	</div>
 
@@ -287,10 +295,14 @@
 	document.getElementById("cred").innerHTML = cr;
 	document.getElementById("subj").innerHTML = tb;
 	
-	alert("Total number of subjects: " + cd.length);
-	
 	var assessor = document.getElementsByClassName("assessor");
 	var assessed = document.getElementsByClassName("assessed");
+	
+	for (o = 0; o < 3; o++)
+	{
+		assessor[o].setAttribute("name", "assessor"+o);
+		assessed[o].setAttribute("name", "assessed"+o);		
+	}
 </script>
 </body>
 

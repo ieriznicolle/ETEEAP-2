@@ -33,112 +33,97 @@
 		<form name="form" action="eteeap?epage=apply" method="post">
 			<button class="active" type="submit" value="APPLY">APPLY</button>
 		</form>
+		<form name="form" action="eteeap?epage=offerings" method="post">
+			<button type="submit" value="OFFERINGS">OFFERINGS</button>
+		</form>
 		<form name="form" action="eteeap?epage=home" method="post">
 			<button type="submit" value="HOME">HOME</button>
 		</form>
 	</div>
 	<br><br><br><br>
 	
-	<div id="contentwrap">
-		<div class="slide">
-			<h3>Academic Program Offerings</h3>
-			<h4>Undergraduate Programs</h4>
-			<ul>
-				<li>Bachelor in Broadcast Communication</li>
-				<li>Bachelor in Cooperatives</li>
-				<li>Bachelor in Office Administration</li>
-				<li>Bachelor of Science in Business Administration Major in Marketing Management</li>
-				<li>Bachelor of Science in Business Administration Major in Human Resource Development Management</li>
-				<li>Bachelor in Political Science</li>
-			</ul>
-
-			<h4>Candidate's Minimum Qualifications</h4>
-			<ul>
-				<li>High school diploma or the PEPT placement equivalent to first year college</li>
-				<li>Employed for an aggregate minimum of five (5) years in the industry relevant to the course applied</li>
-				<li>Filipino citizen; 25 years of age</li>
-				<li>For Applicants abroad, have someone with your issued Special Power of Attorney (SPA) to represent you here</li>
-			</ul>
-		</div>
+	<div id="content">
+		<form name="form" action="eteeap?epage=studentapply" method="post">	
+			<h1 style="margin: 0;">APPLY</h1>
 		
-		<div class="slide">
-			<h4>Requirements for Admission</h4>
-			<ul>
-				<li>Letter of intent to avail of the program addressed to the University President (Dr. Emanuel C. de Guzman) through the Executive Vice President (Dr. Manuel M. Muhi) and Office Director (Dr. Remedios G. Ado)</li>
-				<li>Accomplished ETEEAP application form</li>
-				<li>Comprehensive curriculum vitae</li>
-				<li>Most recent academic record (Form 137 or original transcript of records)</li>
-				<li>Honorable dismissal and subject descriptions from the institution where applicant was last enrolled</li>
-				<li>Service record or certificate of employment</li>
-				<li>Appointment and duties, functions, and responsibilities (DFR) of each position held</li>
-				<li>Latest 2x2 picture (2 pcs) white background</li>
-				<li>Original birth certificate (NSO authenticated)</li>
-				<li>Original marriage certificate for female applicant (NSO authenticated)</li>
-				<li>Other documents, such as but not limited to: certificate of participation and/or attendance to seminars/trainings/conference/colloquium or forum attended, recognition or award/s received ; relevant licensure and other professional exams passed; copy of research and/or articles published; certificate of membership; and the like</li>
-				<li></li>
-			</ul>
-		</div>
-		
-		<div class="slide">
-			<h4>Admission Procedures</h4>
-			<ol>
-				<li>Submit the required documents to the Office of ETEEAP/NonTrad/TransNational Education at the 4th Floor, NALLRC, PUP Main Campus, Anonas St., Sta. Mesa, Manila</li>
-				<li>Pay the required application and assessment fees</li>
-				<li>Report for interview to the College or Graduate School Dean/Department or Chairperson and to the Office Director</li>
-				<li>Secure a copy of the Program curriculum showing the results of your competency assessment and accreditation of formal and non-formal education</li>
-				<li>Enroll the required academic subjects/courses</li>
-			</ol>
-
-			<h4>Graduation Requirements in the ETEEAP</h4>
-			<ul>
-				<li>Candidate must have satisfactorily earned the necessary credits based on competency standard;</li>
-				<li>Payment of the full cost of the assessment program regardless of the amount of credits earned; and</li>
-				<li>Candidate must have passed panel defense of a special research/production project.</li>
-			</ul>
-		</div>
-		
-		<div class="buttons" style="width:100%">
-		    <div class="left" onclick="plusDivs(-1)">&#10094;</div>
-		    <div class="right" onclick="plusDivs(1)">&#10095;</div>
-		    <span class="slidebutton demo sba" onclick="currentDiv(1)"></span>
-		    <span class="slidebutton demo sba" onclick="currentDiv(2)"></span>
-		    <span class="slidebutton demo sba" onclick="currentDiv(3)"></span>
-  		</div>
-	</div>
-	
+			<div class="aed" align="center">
+				<table>
+					<tr>
+						<td colspan=2 style="text-align: center;"><span style="color:#8c2f15; font-weight:bold; font-size: 15px;">
+										<%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%><br><br>
+									</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Name:</td><td><input class="name" pattern="[a-zA-Z ]+" type="text" name="fname" placeholder ="JUAN" required>
+							  			  <input class="name" pattern="[a-zA-Z ]+" type="text"  name="mname" placeholder ="KARLOS">
+										  <input class="name" pattern="[a-zA-Z ]+" type="text"  name="sname" placeholder ="DELA CRUZ" required></td>
+					</tr>
+					<tr>
+						<td>Program Applied:</td><td><select name="course" required>
+										<option value="" disabled selected>Course</option>
+										<option value="Bachelor of Arts in Broadcast Communication">Bachelor of Arts in Broadcast Communication</option>
+										<option value="Bachelor in Advertising and Public Relations">Bachelor in Advertising and Public Relations</option>
+										<option value="Batsilyer ng Artes sa Filipinolohiya">Batsilyer ng Artes sa Filipinolohiya</option>
+										<option value="Bachelor of Arts in Journalism">Bachelor of Arts in Journalism</option>
+										<option value="Bachelor in Banking and Finance">Bachelor in Banking and Finance</option>
+										<option value="Bachelor in Public Administration">Bachelor in Public Administration</option>
+										<option value="Bachelor in Political Science">Bachelor in Political Science</option>
+										<option value="Bachelor of Science in Business Administration major in Human Resource Development Management">Bachelor of Science in Business Administration major in Human Resource Development Management</option>
+										<option value="Bachelor of Science in Business Administration major in Marketing Management">Bachelor of Science in Business Administration major in Marketing Management</option>
+										<option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
+										<option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
+										<option value="Bachelor of Science in Entrepreneurship">Bachelor of Science in Entrepreneurship</option>
+										<option value="Bachelor of Science in Hospitality Management">Bachelor of Science in Hospitality Management</option>
+										<option value="Bachelor of Science in Industrial Engineering">Bachelor of Science in Industrial Engineering</option>
+										<option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+										<option value="Bachelor of Science in Office Administration major in Corporate Transcription">Bachelor of Science in Office Administration major in Corporate Transcription</option>
+										<option value="Bachelor of Science in Office Administration major in Legal Transcription">Bachelor of Science in Office Administration major in Legal Transcription</option>
+										<option value="Bachelor of Science in Office Administration major in Medical Transcription">Bachelor of Science in Office Administration major in Medical Transcription</option>
+										<option value="Bachelor of Science in Sociology">Bachelor of Science in Sociology</option>
+										<option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+										</select></td>
+					</tr>
+					<tr>
+						<td>Telephone Number: </td><td><input type="tel" name="pnum" pattern="[0-9]{7}" maxlength="7" title="Telephone Number" placeholder="XXXXXXX"></td>
+					</tr>
+					<tr>
+						<td>Cellphone Number: </td><td><input type="tel" name="mnum" pattern="[0][9][0-9]{9}" maxlength="11" title="Contact Number" placeholder="09XXXXXXXXX" required></td>
+					</tr>
+					<tr>
+						<td>Email:</td><td><input type="email"  name="email" pattern=".+@gmail.com" placeholder ="juandelacruz@gmail.com" title="Email" required></td>
+					</tr>
+					<tr>
+						<td>Highest Degree Earned: </td><td><select name="degree" required>
+										<option value=" " disabled selected>Degree</option>
+										<option value="Undergraduate">Undergraduate</option>
+										<option value="Associate">Associate</option>
+										<option value="Bachelor">Bachelor</option>
+										<option value="Master">Master</option>
+										<option value="Doctorate">Doctorate</option>
+										</select></td>
+					</tr>
+					<tr>
+						<td>Last School: </td><td><input type="text" pattern="[a-zA-Z ]+" name="school" title="Last School" placeholder="Polytechnic University of the Philippines" required></td>
+					</tr>
+					<tr>
+						<td>Year: </td><td><input type="text" pattern="[0-9]{4}" name="year" maxlength="4" title="Year" placeholder="20XX" required></td>
+					</tr>
+					<tr>
+						<td colspan=2><br><input type="checkbox" required>I agree to the terms and Conditions(<a href="https://www.privacy.gov.ph/data-privacy-act/" target="_blank">Data Privacy Act</a>)</td>
+					</tr>
+				</table>
+				<br>		
+				<input type="submit" value="Submit"/>
+				<input type="reset" value="Clear Entries"/>	
+			</div>
+		</form>
+	</div> <br>	
 	<footer id="footer"></footer>
 </div>
 
 <script>
-	var slideIndex = 1;
-	showDivs(slideIndex);
-	
-	function plusDivs(n) {
-		showDivs(slideIndex += n); }
-	
-	function currentDiv(n) {
-		showDivs(slideIndex = n); }
-	
-	function showDivs(n) {
-		var i;
-		var x = document.getElementsByClassName("slide");
-		var dots = document.getElementsByClassName("demo");
-	  
-		if (n > x.length) {
-			slideIndex = 1; }
-	  
-		if (n < 1) {
-			slideIndex = x.length; }
-	  
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none"; }
-		
-		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" sbactive", ""); }
-		
-		x[slideIndex-1].style.display = "block";  
-		dots[slideIndex-1].className += " sbactive";
-	}
+
 </script>
 </body>
 
